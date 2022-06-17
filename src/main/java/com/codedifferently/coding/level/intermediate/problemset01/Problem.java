@@ -104,8 +104,13 @@ public class Problem {
      */
 
     public static String scrambleOfLetters(String scramble) {
+        StringBuilder builder = new StringBuilder();
+        for(int i = 0; i < scramble.length(); i++){
+            if(i == 0||i==1 || i== 4 || i == 5 || i == 8 || i == 9)
+                builder.append(scramble.charAt(i));
+        }
 
-        return null;
+        return builder.toString();
     }
 
 
