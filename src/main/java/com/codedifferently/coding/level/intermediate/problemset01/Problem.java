@@ -1,5 +1,8 @@
 package com.codedifferently.coding.level.intermediate.problemset01;
 
+import java.util.Arrays;
+import java.util.HashMap;
+
 public class Problem {
 
     /* Problem 01
@@ -16,8 +19,12 @@ public class Problem {
      */
 
     public static String stringCopies(String word, int n) {
-
-        return null;
+        if(n == 0) return word;
+        StringBuilder builder = new StringBuilder(word);
+        for(int i = 1; i<n; i++){
+            builder.append(word);
+        }
+        return builder.toString();
     }
 
 
@@ -32,8 +39,11 @@ public class Problem {
      */
 
     public static Boolean followedX(String str) {
-
-        return null;
+        for(int i = 0; i < str.length()-1; i++){
+            if(str.charAt(i) == 'x' && str.charAt(i+1) == 'x')
+                return true;
+        }
+        return false;
     }
 
 
@@ -70,8 +80,12 @@ public class Problem {
      */
 
     public static Boolean basicNumbers123(int[] nums) {
-
-        return null;
+        if(nums.length < 3) return false;
+        for(int i = 0; i< nums.length - 2; i++){
+            if(nums[i] == 1 && nums[i+1] == 2 && nums[i+2] == 3)
+                return true;
+        }
+        return false;
     }
 
 
@@ -108,7 +122,11 @@ public class Problem {
      */
 
     public static Boolean dontAcceptTriples(int[] score) {
-
-        return null;
+        if(score.length < 3) return false;
+        for(int i = 0; i< score.length - 2; i++){
+            if(score[i+1] == score[i] && score[i+2] == score[i])
+                return false;
+        }
+        return true;
     }
 }
